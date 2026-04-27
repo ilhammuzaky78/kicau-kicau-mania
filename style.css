@@ -1,0 +1,82 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Wrapper untuk canvas + overlay */
+.camera-wrapper {
+  position: relative;
+  width: 95vw;
+  max-width: 960px;
+  margin: 10px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.output_canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Overlay absolute di atas canvas agar tidak keluar frame */
+#overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 75%;
+  max-height: 75%;
+  width: auto;
+  height: auto;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 10;
+}
+
+/* Responsif untuk HP portrait & landscape */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .camera-wrapper {
+    width: 98vw;
+    margin-top: 5px;
+  }
+  #overlay {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}

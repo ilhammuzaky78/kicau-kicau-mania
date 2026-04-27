@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Kicau Kicau Mania Web</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- MediaPipe JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+<body>
+  <h1>Kicau Kicau Mania 🐦</h1>
+  <p class="subtitle">Sentuh hidung dengan tangan untuk memunculkan video!</p>
+
+  <!-- Hidden video element used as MediaPipe input source -->
+  <video class="input_video" autoplay playsinline style="display:none;"></video>
+
+  <!-- Wrapper agar overlay bisa absolute di atas canvas -->
+  <div class="camera-wrapper">
+    <canvas class="output_canvas"></canvas>
+    <video id="overlay" src="overlay.mp4" playsinline></video>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
